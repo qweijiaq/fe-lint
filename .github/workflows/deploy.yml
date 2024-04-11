@@ -17,7 +17,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.18.0'
-          cache: 'pnpm' # 直接使用 setup-node 提供的依赖缓存功能
 
       - name: Install and Build
         run: |

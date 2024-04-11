@@ -1,6 +1,6 @@
 {
   "name": "wj-fe-eslint-config",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "index.js",
   "description": "GopherLint JavaScript TypeScript Node 规范",
   "keywords": [
@@ -45,5 +45,5 @@
     "typescript": "^4.1.2",
     "vue-eslint-parser": "^7.3.0"
   },
-  "gitHead": "2c44c78f0937b747be94f62cd8eebed857831c53"
+  "gitHead": "1fd3e214f3abb72c213edb8389ea276bd9e621d4"
 }

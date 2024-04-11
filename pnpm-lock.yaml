@@ -10090,7 +10090,7 @@ packages:
     engines: { node: '>= 4' }
     dev: true
 
-  /wjurl@1.0.2:
+  /encodeurl@1.0.2:
     resolution:
       {
         integrity: sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==,
@@ -11438,7 +11438,7 @@ packages:
       cookie-signature: 1.0.6
       debug: 2.6.9(supports-color@6.1.0)
       depd: 2.0.0
-      wjurl: 1.0.2
+      encodeurl: 1.0.2
       escape-html: 1.0.3
       etag: 1.8.1
       finalhandler: 1.2.0(supports-color@6.1.0)
@@ -11727,7 +11727,7 @@ packages:
     engines: { node: '>= 0.8' }
     dependencies:
       debug: 2.6.9(supports-color@6.1.0)
-      wjurl: 1.0.2
+      encodeurl: 1.0.2
       escape-html: 1.0.3
       on-finished: 2.4.1
       parseurl: 1.3.3
@@ -21540,7 +21540,7 @@ packages:
       debug: 2.6.9(supports-color@6.1.0)
       depd: 2.0.0
       destroy: 1.2.0
-      wjurl: 1.0.2
+      encodeurl: 1.0.2
       escape-html: 1.0.3
       etag: 1.8.1
       fresh: 0.5.2
@@ -21606,7 +21606,7 @@ packages:
       }
     engines: { node: '>= 0.8.0' }
     dependencies:
-      wjurl: 1.0.2
+      encodeurl: 1.0.2
       escape-html: 1.0.3
       parseurl: 1.3.3
       send: 0.18.0(supports-color@6.1.0)

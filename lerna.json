@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "npmClient": "pnpm",
   "useWorkspaces": true,
   "command": {
@@ -9,7 +9,11 @@
       "registry": "https://registry.npmjs.org"
     },
     "packages": [
-      "packages/*"
+      "packages/commitlint-config",
+      "packages/eslint-config",
+      "packages/eslint-plugin",
+      "packages/markdownlint-config",
+      "packages/stylelint-config"
     ]
   }
 }

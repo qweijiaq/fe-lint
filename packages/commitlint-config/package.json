@@ -1,0 +1,24 @@
+{
+  "name": "wj-fe-commitlint-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "GopherLint Git规范",
+  "keywords": [
+    "GopherLint",
+    "commit",
+    "lint"
+  ],
+  "author": "Pony Wei",
+  "homepage": "https://github.com/qweijiaq/fe-lint#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qweijiaq/fe-lint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qweijiaq/fe-lint/issues"
+  },
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^4.5.0"
+  }
+}

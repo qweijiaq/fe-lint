@@ -1,0 +1,13 @@
+{
+  "cSpell.words": ["Pony Wei", "commitlint", "stylelint", "vuepress"],
+  "git.ignoreLimitWarning": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  "hide-files.files": []
+}

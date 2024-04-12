@@ -1,6 +1,6 @@
 {
   "name": "wj-fe-markdownlint-config",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "index.json",
   "description": "GopherLint 文档规范",
   "keywords": [
@@ -21,5 +21,5 @@
   "peerDependencies": {
     "markdownlint": "^0.28.1"
   },
-  "gitHead": "1fd3e214f3abb72c213edb8389ea276bd9e621d4"
+  "gitHead": "623fa73311e4305681381efd5f830d88fb84e865"
 }

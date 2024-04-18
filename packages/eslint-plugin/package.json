@@ -1,6 +1,6 @@
 {
   "name": "wj-fe-eslint-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "自定义eslint插件",
   "scripts": {
     "test": "jest",
@@ -35,5 +35,5 @@
     "eslint": "^8.7.0",
     "jest": "^26.6.3"
   },
-  "gitHead": "ba2757d6e44c6ff0463f40a73abdab7dc6235de7"
+  "gitHead": "58dfce9002fdd63e1644a9ad338fd429a36e6081"
 }

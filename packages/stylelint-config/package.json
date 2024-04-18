@@ -1,6 +1,6 @@
 {
   "name": "wj-fe-stylelint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "GopherLint CSS规范",
   "main": "index.js",
   "keywords": [
@@ -30,5 +30,5 @@
   "bugs": {
     "url": "https://github.com/qweijiaq/issues"
   },
-  "gitHead": "ba2757d6e44c6ff0463f40a73abdab7dc6235de7"
+  "gitHead": "58dfce9002fdd63e1644a9ad338fd429a36e6081"
 }

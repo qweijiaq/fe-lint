@@ -1,6 +1,6 @@
 {
-  "name": "fe-lint",
-  "version": "1.0.5",
+  "name": "wj-fe-lint",
+  "version": "1.1.1",
   "description": "前端编码规范工程化脚手架",
   "bin": "./lib/cli.js",
   "main": "./lib/index.js",
@@ -80,10 +80,10 @@
     "terminal-link": "^2.1.1",
     "text-table": "^0.2.0",
     "vue-eslint-parser": "^7.3.0",
-    "wj-fe-commitlint-config": "^1.0.5",
-    "wj-fe-eslint-config": "^1.0.5",
-    "wj-fe-markdownlint-config": "^1.0.5",
-    "wj-fe-stylelint-config": "^1.0.5"
+    "wj-fe-commitlint-config": "workspace:^",
+    "wj-fe-eslint-config": "workspace:^",
+    "wj-fe-markdownlint-config": "workspace:^",
+    "wj-fe-stylelint-config": "workspace:^"
   },
   "author": "Pony Wei",
   "homepage": "https://github.com/qweijiaq#readme",
@@ -95,5 +95,5 @@
   "bugs": {
     "url": "https://github.com/qweijiaq/issues"
   },
-  "gitHead": "2c44c78f0937b747be94f62cd8eebed857831c53"
+  "gitHead": "1fd3e214f3abb72c213edb8389ea276bd9e621d4"
 }

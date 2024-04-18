@@ -1,6 +1,6 @@
 {
   "name": "wj-fe-commitlint-config",
-  "version": "1.0.7",
+  "version": "1.0.1",
   "main": "index.js",
   "description": "GopherLint Git规范",
   "keywords": [
@@ -21,5 +21,5 @@
   "dependencies": {
     "conventional-changelog-conventionalcommits": "^4.5.0"
   },
-  "gitHead": "623fa73311e4305681381efd5f830d88fb84e865"
+  "gitHead": "ba2757d6e44c6ff0463f40a73abdab7dc6235de7"
 }

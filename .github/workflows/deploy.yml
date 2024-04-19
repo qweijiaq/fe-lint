@@ -20,6 +20,7 @@ jobs:
 
       - name: Install and Build
         run: |
+          export NODE_OPTIONS=--openssl-legacy-provider
           npm i -g pnpm
           pnpm run init
           pnpm run docs:build

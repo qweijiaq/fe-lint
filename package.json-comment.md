@@ -1,6 +1,6 @@
 ```json
 {
-  "name": "wj-fe-spec", // 包名
+  "name": "wj-fe-lint", // 包名
   "private": true, // 是否为私有包
   "description": "前端编码规范工程化", // 包描述
   "scripts": {
@@ -20,7 +20,7 @@
   "keywords": [
     // 关键词
     "GopherLint",
-    "fe spec"
+    "fe lint"
   ],
   "author": "Pony Wei", // 作者
   "license": "ISC", // 许可证

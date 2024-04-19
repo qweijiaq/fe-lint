@@ -26,7 +26,7 @@ describe(`'fix' command`, () => {
     await cli(['fix'], {
       cwd: path.dirname(`${dir}/result`),
     });
-    expect(fs.readFileSync(outputFilePath, 'utf8')).toEqual(expectedFileContent);
+    await expect(fs.readFileSync(outputFilePath, 'utf8')).toEqual(expectedFileContent);
   });
 
   afterEach(() => {

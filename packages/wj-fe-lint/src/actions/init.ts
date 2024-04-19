@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs-extra';
-import inquirer from 'inquirer';
-import spawn from 'cross-spawn';
+import inquirer from 'inquirer'; // 用户交互式问答
+import spawn from 'cross-spawn'; // 导入 cross-spawn 模块
 import update from './update';
 import npmType from '../utils/npm-type';
 import log from '../utils/log';
@@ -10,7 +10,7 @@ import generateTemplate from '../utils/generate-template';
 import { PROJECT_TYPES, PKG_NAME } from '../utils/constants';
 import type { InitOptions, PKG } from '../types';
 
-let step = 0;
+let step = 0; // 初始化步骤
 
 /**
  * 选择项目语言和框架
@@ -70,13 +70,13 @@ const chooseEnablePrettier = async (): Promise<boolean> => {
 };
 
 export default async (options: InitOptions) => {
-  const cwd = options.cwd || process.cwd();
-  const isTest = process.env.NODE_ENV === 'test';
-  const checkVersionUpdate = options.checkVersionUpdate || false;
-  const disableNpmInstall = options.disableNpmInstall || false;
-  const config: Record<string, any> = {};
-  const pkgPath = path.resolve(cwd, 'package.json');
-  let pkg: PKG = fs.readJSONSync(pkgPath);
+  const cwd = options.cwd || process.cwd(); // 获取当前工作目录
+  const isTest = process.env.NODE_ENV === 'test'; // 是否处于测试模式
+  const checkVersionUpdate = options.checkVersionUpdate || false; // 检查版本更新标志
+  const disableNpmInstall = options.disableNpmInstall || false; // 禁用 npm 安装标志
+  const config: Record<string, any> = {}; // 初始化配置对象
+  const pkgPath = path.resolve(cwd, 'package.json'); // package.json 路径
+  let pkg: PKG = fs.readJSONSync(pkgPath); // 读取 package.json 文件
 
   // 版本检查
   if (!isTest && checkVersionUpdate) {

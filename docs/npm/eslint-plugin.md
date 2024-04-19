@@ -61,8 +61,8 @@ module.exports = {
 **错误代码**示例:
 
 ```js
-var test = 'http://Pony Wei.com';
-var jsx = <img src="http://Pony Wei.com">;
+var test = 'http://blog.wei-jia.top';
+var jsx = <img src="http://blog.wei-jia.top">;
 ```
 
 #### 何时不适用

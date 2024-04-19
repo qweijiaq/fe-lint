@@ -1,7 +1,8 @@
-import { ESLint } from 'eslint';
-import stylelint from 'stylelint';
-import markdownlint from 'markdownlint';
+import { ESLint } from 'eslint'; // 导入 ESLint 类型
+import stylelint from 'stylelint'; // 导入 stylelint
+import markdownlint from 'markdownlint'; // 导入 markdownlint
 
+// 定义 package.json 数据结构
 export interface PKG {
   eslintConfig?: any;
   eslintIgnore?: string[];
@@ -10,9 +11,10 @@ export interface PKG {
   devDependencies?: Record<string, string>;
   dependencies?: Record<string, string>;
 
-  [key: string]: any;
+  [key: string]: any; // 其他键值对
 }
 
+// 定义配置项结构
 export interface Config {
   // 是否启用 ESLint
   enableESLint?: boolean;
@@ -30,6 +32,7 @@ export interface Config {
   markdownlintOptions?: markdownlint.Options;
 }
 
+// 定义扫描选项结构
 export interface ScanOptions {
   // lint 运行的工程目录
   cwd: string;
@@ -49,6 +52,7 @@ export interface ScanOptions {
   config?: Config;
 }
 
+// 定义扫描结果结构
 export interface ScanResult {
   filePath: string;
   errorCount: number;
@@ -65,6 +69,7 @@ export interface ScanResult {
   }>;
 }
 
+// 定义扫描报告结构
 export interface ScanReport {
   results: ScanResult[];
   errorCount: number;
@@ -72,6 +77,7 @@ export interface ScanReport {
   runErrors: Error[];
 }
 
+// 初始化选项结构
 export interface InitOptions {
   cwd: string;
   // 是否检查并升级 wj-fe-lint 的版本
@@ -92,14 +98,14 @@ export interface InitOptions {
   disableNpmInstall?: boolean;
 }
 
+// 获取 lint 配置函数类型
 export interface IGetLintConfig {
   (options: ScanOptions, pkg: PKG, config: Config): ESLint.Options;
-
   (options: ScanOptions, pkg: PKG, config: Config): stylelint.LinterOptions;
-
   (options: ScanOptions, pkg: PKG, config: Config): markdownlint.Options;
 }
 
+// 格式化扫描结果函数类型
 export interface IFormatResults {
   (results: ESLint.LintResult[], quiet: boolean): ScanResult[];
   (results: stylelint.LintResult[], quiet: boolean): ScanResult[];

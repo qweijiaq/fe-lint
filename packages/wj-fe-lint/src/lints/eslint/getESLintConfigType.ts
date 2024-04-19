@@ -3,12 +3,13 @@ import type { PKG } from '../../types';
 
 /**
  * 获取 ESLint 配置类型
- * @param cwd
- * @param pkg
- * @returns wj-fe-eslint-config/index
- * @returns wj-fe-eslint-config/react
- * @returns wj-fe-eslint-config/typescript/index
- * @returns wj-fe-eslint-config/typescript/react
+ * @param cwd 当前工作目录
+ * @param pkg 包信息
+ * @returns ESLint 配置类型
+ * - `wj-fe-eslint-config/index`
+ * - `wj-fe-eslint-config/react`
+ * - `wj-fe-eslint-config/typescript/index`
+ * - `wj-fe-eslint-config/typescript/react`
  */
 export function getESLintConfigType(cwd: string, pkg: PKG): string {
   const tsFiles = glob.sync('./!(node_modules)/**/*.@(ts|tsx)', { cwd });
@@ -18,7 +19,7 @@ export function getESLintConfigType(cwd: string, pkg: PKG): string {
   const language = tsFiles.length > 0 ? 'typescript' : '';
   let dsl = '';
 
-  // dsl判断
+  // DSL 判断
   if (reactFiles.length > 0 || dependencies.some((name) => /^react(-|$)/.test(name))) {
     dsl = 'react';
   } else if (vueFiles.length > 0 || dependencies.some((name) => /^vue(-|$)/.test(name))) {

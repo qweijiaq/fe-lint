@@ -8,6 +8,10 @@ import { getESLintConfigType } from './getESLintConfigType';
 
 /**
  * 获取 ESLint 配置
+ * @param opts 扫描选项
+ * @param pkg 包信息
+ * @param config wj-fe-lint 配置
+ * @returns ESLint 配置
  */
 export function getESLintConfig(opts: ScanOptions, pkg: PKG, config: Config): ESLint.Options {
   const { cwd, fix, ignore } = opts;
@@ -37,7 +41,7 @@ export function getESLintConfig(opts: ScanOptions, pkg: PKG, config: Config): ES
       };
     }
 
-    // 根据扫描目录下有无lintignore文件，若无则使用默认的 ignore 配置
+    // 根据扫描目录下有无 lintignore 文件，若无则使用默认的 ignore 配置
     const lintIgnoreFile = path.resolve(cwd, '.eslintignore');
     if (!fs.existsSync(lintIgnoreFile) && !pkg.eslintIgnore) {
       lintConfig.ignorePath = path.resolve(__dirname, '../config/_eslintignore.ejs');

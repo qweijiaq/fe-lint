@@ -8,8 +8,8 @@ import type { ScanResult } from '../types';
 
 /**
  * 在控制台打印扫描报告
- * @param results
- * @param fix
+ * @param results 扫描结果列表
+ * @param fix 是否进行代码修复
  */
 export default (results: ScanResult[], fix: boolean): void => {
   let output = '\n';
@@ -19,15 +19,22 @@ export default (results: ScanResult[], fix: boolean): void => {
   let fixableWarningCount = 0;
   let summaryColor = 'yellow';
 
+  /**
+   * 转换扫描消息格式
+   * @param {*} param0 扫描消息
+   * @returns {string[]} 格式化后的消息数组
+   */
   const transformMessage = ({ line, column, rule, url, message, errored }) => {
     if (errored) summaryColor = 'red';
     let text = '';
+    // 如果存在规则和相关URL，则使用超链接格式化规则名称，否则使用普通规则名称
     if (rule && url) {
       text = terminalLink(chalk.blue(rule), chalk.dim(` ${url} `), { fallback: !isDocker() });
     } else if (rule) {
       text = chalk.blue(rule);
     }
 
+    // 返回格式化后的消息数组
     return [
       '',
       chalk.dim(`${line}:${column}`),
@@ -37,15 +44,18 @@ export default (results: ScanResult[], fix: boolean): void => {
     ];
   };
 
+  // 遍历结果列表，生成报告
   for (const result of results) {
     if (result.messages.length === 0) continue;
     const { messages } = result;
 
+    // 统计错误、警告数量
     errorCount += result.errorCount;
     warningCount += result.warningCount;
     fixableErrorCount += result.fixableErrorCount;
     fixableWarningCount += result.fixableWarningCount;
 
+    // 构建文件路径和消息表格
     output += `${chalk.underline(result.filePath)}\n`;
     output += `${table(messages.map(transformMessage), {
       align: ['.', 'r', 'l'],
@@ -98,5 +108,6 @@ export default (results: ScanResult[], fix: boolean): void => {
   }
   if (!fix && total === 0) output = chalk.green.bold(`${UNICODE.success} no problems`);
 
+  // 打印报告
   console.log(chalk.reset(output));
 };

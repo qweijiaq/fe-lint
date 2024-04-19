@@ -8,7 +8,7 @@ var config_default = defineConfig4CustomTheme({
       description: '\u524D\u7AEF\u7F16\u7801\u89C4\u8303\u5DE5\u7A0B\u5316',
     },
   },
-  base: '/fe-spec/',
+  base: '/gopher-lint/',
   themeConfig: {
     nav: [
       { text: '\u9996\u9875', link: '/index.md' },

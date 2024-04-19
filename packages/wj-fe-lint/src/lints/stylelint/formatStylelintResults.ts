@@ -3,7 +3,10 @@ import type { ScanResult } from '../../types';
 import { getStylelintRuleDocUrl } from './getStylelintDocUrl';
 
 /**
- * 格式化 Stylelint 输出结果
+ * 格式化 Stylelint 输出结果。
+ * @param results Stylelint 的 lint 结果数组。
+ * @param quiet 是否只显示错误信息。
+ * @returns 扫描结果数组。
  */
 export function formatStylelintResults(results: LintResult[], quiet: boolean): ScanResult[] {
   return results.map(({ source, warnings }) => {

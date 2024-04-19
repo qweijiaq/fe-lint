@@ -1,5 +1,13 @@
 {
-  "cSpell.words": ["Pony Wei", "commitlint", "stylelint", "vuepress"],
+  "cSpell.words": [
+    "commitlint",
+    "conventionalcommits",
+    "Pony Wei",
+    "preinstall",
+    "stylelint",
+    "stylelintrc",
+    "vuepress"
+  ],
   "git.ignoreLimitWarning": true,
   "files.exclude": {
     "**/.git": true,

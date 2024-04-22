@@ -1,17 +1,21 @@
 # http://editorconfig.org
+# 根配置，作用于所有文件
 root = true
 
+# 对所有文件的通用配置
 [*]
-indent_style = space
-indent_size = 2
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
+indent_style = space  # 使用空格进行缩进
+indent_size = 2       # 缩进大小为2个空格
+end_of_line = lf      # 使用 LF 作为换行符
+charset = utf-8       # 字符编码为 UTF-8
+trim_trailing_whitespace = true  # 移除行尾空白字符
+insert_final_newline = true       # 插入最后一行的新行
 
+# 对 Markdown 文件的特殊配置
 [*.md]
-trim_trailing_whitespace = false
+trim_trailing_whitespace = false  # 不移除 Markdown 文件的行尾空白字符
 
+# 对 Makefile 文件的特殊配置
 [makefile]
-indent_style = tab
-indent_size = 4
+indent_style = tab   # 使用制表符进行缩进
+indent_size = 4      # 缩进大小为4个空格

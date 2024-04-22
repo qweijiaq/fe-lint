@@ -174,19 +174,20 @@ module.exports = {
       'off',
       {
         order: [
-          'static-methods',
-          'instance-variables',
-          'lifecycle',
+          'static-methods', // 静态方法
+          'instance-variables', // 实例变量
+          'lifecycle', // 生命周期方法
           '/^on.+$/',
-          'getters',
-          'setters',
+          'getters', // Getter 方法
+          'setters', // Setter 方法
           '/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/',
-          'instance-methods',
-          'everything-else',
-          'rendering',
+          'instance-methods', // 实例方法
+          'everything-else', // 其他
+          'rendering', // 渲染方法
         ],
         groups: {
           lifecycle: [
+            // 生命周期相关方法的顺序
             'displayName',
             'propTypes',
             'contextTypes',
@@ -207,7 +208,11 @@ module.exports = {
             'componentDidUpdate',
             'componentWillUnmount',
           ],
-          rendering: ['/^render.+$/', 'render'],
+          rendering: [
+            // 渲染相关方法的顺序
+            '/^render.+$/', // 以 "render" 开头的方法
+            'render', // 渲染方法
+          ],
         },
       },
     ],

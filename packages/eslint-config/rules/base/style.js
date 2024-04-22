@@ -125,7 +125,7 @@ module.exports = {
     // 定义对象字面量时，key, value 之间有且只有一个空格
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
 
-    // 关键字前后各一个空格
+    // 关键字前后空格
     'keyword-spacing': [
       'error',
       {

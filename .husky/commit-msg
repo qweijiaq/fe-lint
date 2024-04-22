@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
+
+# 导入 husky.sh 脚本
 . "$(dirname -- "$0")/_/husky.sh"
 
+# 使用 commitlint 进行提交消息格式检查，--edit 标志用于打开文本编辑器编辑提交消息，$1 为传入的参数
 npx commitlint --edit $1

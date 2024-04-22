@@ -7,12 +7,13 @@
 
 module.exports = {
   plugins: [
-    'import',
+    'import', // 启用 import 相关的 lint 规则
   ],
   settings: {
     'import/ignore': [
-      'node_modules',
-      '\\.(coffee|scss|css|less|hbs|svg|json)$',
+      // 配置哪些文件/文件类型不进行 import lint 检查
+      'node_modules', // 忽略 node_modules 文件夹下的所有文件
+      '\\.(coffee|scss|css|less|hbs|svg|json)$', // 忽略特定后缀名的文件
     ],
   },
   rules: {
@@ -20,54 +21,54 @@ module.exports = {
      * Static analysis
      */
 
-    // ensure imports point to files/modules that can be resolved
+    // 确保 import 的模块能够被解析到
     'import/no-unresolved': 'error',
 
-    // ensure named imports coupled with named exports
+    // 确保命名 import 与命名 export 相对应
     'import/named': 'error',
 
-    // ensure default import coupled with default export
+    // 确保 default import 与 default export 相对应
     'import/default': 'error',
 
-    // ensure imported namespaces contain dereferenced properties as they are dereferenced
+    // 确保导入的命名空间包含已解引用的属性
     'import/namespace': 'error',
 
     /**
      * Helpful warnings
      */
 
-    // disallow invalid exports, e.g. multiple defaults
+    // 禁止使用无效的 exports，例如多个默认导出
     'import/export': 'error',
 
-    // import 一个文件时，禁止 default import 的名字跟文件内的命名 export 相同
+    // 当 import 一个文件时，禁止 default import 的名字与文件内的命名 export 相同
     'import/no-named-as-default': 'error',
 
-    // 访问 default export 的属性时，如果该文件有与属性同名的命名 export，则给出警告
+    // 访问 default export 的属性时，如果文件中有与属性同名的命名 export，则给出警告
     'import/no-named-as-default-member': 'warn',
 
-    // disallow use of jsdoc-marked-deprecated imports
+    // 禁止使用带有 jsdoc-marked-deprecated 的 import
     'import/no-deprecated': 'off',
 
-    // Forbid the use of extraneous packages
+    // 禁止使用不必要的包
     'import/no-extraneous-dependencies': 'off',
 
-    // Forbid mutable exports
+    // 禁止可变的导出
     'import/no-mutable-exports': 'off',
 
     /**
      * Module systems
      */
 
-    // Report potentially ambiguous parse goal (script vs. module)
+    // 报告可能存在歧义的解析目标（脚本 vs. 模块）
     'import/unambiguous': 'off',
 
-    // disallow require()
+    // 禁止使用 require()
     'import/no-commonjs': 'off',
 
-    // disallow AMD require/define
+    // 禁止 AMD 的 require/define
     'import/no-amd': 'warn',
 
-    // No Node.js builtin modules
+    // 不允许使用 Node.js 内置模块
     'import/no-nodejs-modules': 'off',
 
     /**
@@ -75,23 +76,25 @@ module.exports = {
      */
 
     // import 语句需要放到模块的最上方
-    // @unessential
     'import/first': 'error',
 
-    // 不要用多个 import 引入同一模块
+    // 不允许使用多个 import 引入同一模块
     'import/no-duplicates': 'error',
 
-    // disallow namespace imports
+    // 禁止使用命名空间导入
     'import/no-namespace': 'off',
 
-    // Ensure consistent use of file extension within the import path
+    // 确保在导入路径中一致使用文件扩展名
     'import/extensions': 'off',
 
     // import 语句的排序
-    'import/order': ['off', {
-      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-      'newlines-between': 'never',
-    }],
+    'import/order': [
+      'off',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        'newlines-between': 'never',
+      },
+    ],
 
     // 在最后一个 import / require 语句后保留一个空行
     'import/newline-after-import': 'warn',
@@ -99,69 +102,77 @@ module.exports = {
     // 当模块内只有一个 export 时，使用 default export
     'import/prefer-default-export': 'off',
 
-    // Restrict which files can be imported in a given folder
+    // 限制特定文件夹中可导入的文件
     'import/no-restricted-paths': 'off',
 
-    // Forbid modules to have too many dependencies
+    // 禁止模块具有过多的依赖项
     'import/max-dependencies': ['off', { max: 10 }],
 
-    // Forbid import of modules using absolute paths
+    // 禁止绝对路径引入模块
     'import/no-absolute-path': 'off',
 
-    // Forbid require() calls with expressions
+    // 禁止 require() 使用表达式
     'import/no-dynamic-require': 'off',
 
-    // prevent importing the submodules of other modules
-    'import/no-internal-modules': ['off', {
-      allow: [],
-    }],
+    // 阻止导入其他模块的子模块
+    'import/no-internal-modules': [
+      'off',
+      {
+        allow: [],
+      },
+    ],
 
-    // Forbid Webpack loader syntax in imports
+    // 禁止在导入语句中使用 Webpack loader 语法
     'import/no-webpack-loader-syntax': 'off',
 
-    // Prevent unassigned imports
-    // importing for side effects is perfectly acceptable, if you need side effects.
+    // 防止未分配的导入
     'import/no-unassigned-import': 'off',
 
     // 禁止 import { default as foo } from './foo.js'
-    // 应写成 import foo from './foo.js'
+    // 应改写为 import foo from './foo.js'
     'import/no-named-default': 'off',
 
-    // Reports if a module's default export is unnamed
-    'import/no-anonymous-default-export': ['off', {
-      allowArray: false,
-      allowArrowFunction: false,
-      allowAnonymousClass: false,
-      allowAnonymousFunction: false,
-      allowLiteral: false,
-      allowObject: false,
-    }],
+    // 报告模块的默认导出是否未命名
+    'import/no-anonymous-default-export': [
+      'off', // 关闭此规则
+      {
+        allowArray: false, // 不允许匿名数组导出
+        allowArrowFunction: false, // 不允许匿名箭头函数导出
+        allowAnonymousClass: false, // 不允许匿名类导出
+        allowAnonymousFunction: false, // 不允许匿名函数导出
+        allowLiteral: false, // 不允许字面量对象导出
+        allowObject: false, // 不允许匿名对象导出
+      },
+    ],
 
-    // This rule enforces that all exports are declared at the bottom of the file.
+    // 此规则强制所有导出声明在文件底部
     'import/exports-last': 'off',
 
-    // Prefer named exports to be grouped together in a single export declaration
+    // 首选将命名导出组合在单个导出声明中
     'import/group-exports': 'off',
 
-    // forbid default exports. this is a terrible rule, do not use it.
+    // 禁止默认导出。这是一个糟糕的规则，请不要使用它
     'import/no-default-export': 'off',
 
     // 不要产生自引用
     'import/no-self-import': 'error',
 
     // 不要产生循环引用
-    'import/no-cycle': ['error', { maxDepth: Infinity }],
+    'import/no-cycle': ['error', { maxDepth: Infinity }], // 禁止模块之间的循环引用，任意深度
 
-    // Ensures that there are no useless path segments
+    // 确保没有无用的路径段
     'import/no-useless-path-segments': 'off',
 
-    // dynamic imports require a leading comment with a webpackChunkName
-    'import/dynamic-import-chunkname': ['off', {
-      importFunctions: [],
-      webpackChunknameFormat: '[0-9a-zA-Z-_/.]+',
-    }],
+    // 动态导入需要一个带有 webpackChunkName 的前导注释
+    'import/dynamic-import-chunkname': [
+      'off',
+      {
+        importFunctions: [], // 动态导入函数列表
+        webpackChunknameFormat: '[0-9a-zA-Z-_/.]+', // webpackChunkName 格式正则表达式
+      },
+    ],
 
-    // Use this rule to prevent imports to folders in relative parent paths.
+    // 使用此规则防止相对父路径的文件夹导入
     'import/no-relative-parent-imports': 'off',
   },
 };
